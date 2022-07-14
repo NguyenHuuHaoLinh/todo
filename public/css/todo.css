@@ -1,0 +1,72 @@
+.listData {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: auto;
+  margin-top: 50px;
+}
+body {
+  background-color: rgb(156, 204, 204);
+}
+.btn-primary {
+  display: block;
+  margin: auto;
+}
+.list {
+  background-color: aliceblue;
+  border-radius: 5%;
+  margin: 0px 20xp;
+}
+h2 {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(208, 210, 212);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 24px;
+}
+.todo,
+.doing,
+.done {
+  margin: 20px 20px;
+}
+td {
+  padding: 2px 10px;
+}
+.delete {
+  border: none;
+  background-color: rgb(201, 199, 199);
+  color: rgb(0, 4, 8);
+  padding: 5px 10px;
+}
+.delete:hover {
+  background-color: rgb(231, 16, 16);
+  color: aliceblue;
+}
+.change {
+  background-color: rgb(109, 111, 112);
+  border: none;
+}
+.change:hover {
+  background-color: aliceblue;
+  color: black;
+}
+button.change:focus {
+  box-shadow: none;
+}
+.title {
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(106, 107, 107);
+  text-align: center;
+  margin-top: 20px;
+}
+.add {
+  background-color: rgb(100, 102, 104);
+  border: none;
+}
+.add:focus {
+  box-shadow: none;
+}
+.add:hover {
+  background-color: aliceblue;
+  color: black;
+}
