@@ -26,17 +26,21 @@ function render() {
   })
     .then(function (data) {
       data.data.map(function (a, b) {
-        let div = `<tr>
-                <td>${a.name}</td>
-                <td>${a.deadline}</td>
+        let div = `<tr class ="div">
+                <td class="show" >${a.name}</td>
+                <td class="show" >${new Date(a.deadline.toString())}</td>
                 <td>
                 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary change" data-bs-toggle="modal" data-bs-target="#staticBackdrop${a._id}" >
+<button type="button" class="btn btn-primary change" data-bs-toggle="modal" data-bs-target="#staticBackdrop${
+          a._id
+        }" >
 <i class="fa-solid fa-file-pen"></i>
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop${a._id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdrop${
+          a._id
+        }" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -45,7 +49,9 @@ function render() {
       </div>
       <div class="modal-body">
       <input type="text" name="" id="newname${a._id}" placeholder="newname" />
-      <input type="date" name="" id="newdeadline${a._id}" placeholder="newdeadline" />
+      <input  type="datetime-local" name="" id="newdeadline${
+        a._id
+      }" placeholder="newdeadline" />
       <select name="" id="newstatus${a._id}">
         <option value="todo">todo</option>
         <option value="doing">doing</option>
@@ -54,24 +60,32 @@ function render() {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button"  id="change${a._id}" data-bs-dismiss="modal" class="btn btn-primary ">change</button>
+        <button type="button"  id="change${
+          a._id
+        }" data-bs-dismiss="modal" class="btn btn-primary ">change</button>
       </div>
     </div>
   </div>
 </div>
                 </td>
-                <td><button class="delete" id=delete${a._id} ><i class="fa-solid fa-trash-can"></i></button>
+                <td><button class="delete" id=delete${
+                  a._id
+                } ><i class="fa-solid fa-trash-can"></i></button>
                 </td>
                 
                 </tr>`;
 
         if (a.status === "todo") {
+          $(".notThing").html("");
           $(".todo").append(div);
         } else if (a.status === "doing") {
+          $(".notThing1").html("");
           $(".doing").append(div);
-        } else {
+        } else if (a.status === "done") {
+          $(".notThing2").html("");
           $(".done").append(div);
         }
+
         $(`#delete${a._id}`).on("click", function () {
           $.ajax({
             url: "/todo/" + a._id,
@@ -84,6 +98,7 @@ function render() {
             .catch(function (err) {
               console.log(err);
             });
+          window.location.reload();
         });
         $(`#change${a._id}`).on("click", function () {
           const newname = $(`#newname${a._id}`).val();

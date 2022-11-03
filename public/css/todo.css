@@ -6,7 +6,10 @@
   margin-top: 50px;
 }
 body {
-  background-color: rgb(156, 204, 204);
+  background: url(../uploads/OIP.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  text-align: center;
 }
 .btn-primary {
   display: block;
@@ -14,8 +17,10 @@ body {
 }
 .list {
   background-color: aliceblue;
-  border-radius: 5%;
+  border-radius: 10px;
   margin: 0px 20xp;
+  padding: 0px 0px 20px 0px;
+  max-width: 30%;
 }
 h2 {
   text-align: center;
@@ -24,11 +29,15 @@ h2 {
   font-family: "Courier New", Courier, monospace;
   font-size: 24px;
 }
+
 .todo,
 .doing,
 .done {
+  display: block;
   margin: 20px 20px;
+  max-width: 100%;
 }
+
 td {
   padding: 2px 10px;
 }
@@ -46,16 +55,17 @@ td {
   background-color: rgb(109, 111, 112);
   border: none;
 }
-.change:hover {
-  background-color: aliceblue;
+button.change:hover {
+  background-color: rgb(103, 130, 150);
   color: black;
 }
 button.change:focus {
   box-shadow: none;
+  background-color: rgb(109, 111, 112);
 }
 .title {
   font-family: "Courier New", Courier, monospace;
-  color: rgb(106, 107, 107);
+  color: rgb(180, 230, 230);
   text-align: center;
   margin-top: 20px;
 }
@@ -63,10 +73,87 @@ button.change:focus {
   background-color: rgb(100, 102, 104);
   border: none;
 }
-.add:focus {
+button.add:focus {
   box-shadow: none;
+  background-color: rgb(100, 102, 104);
 }
-.add:hover {
+button.add:hover {
   background-color: aliceblue;
+  color: rgb(71, 194, 216);
+}
+.notThing,
+.notThing1,
+.notThing2 {
+  padding: 20px 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+.newtask {
+  margin-left: 170px;
+  font-family: "Courier New", Courier, monospace;
+}
+.fa-list-check {
+  color: rgb(112, 175, 175);
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid rgb(209, 209, 206);
+  font-family: "Courier New", Courier, monospace;
+}
+.input2:hover {
+  border: 1px solid black;
+}
+
+.input1:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+.addtask {
+  background-color: rgb(134, 131, 131);
+  border: none;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+.addtask:hover {
+  background-color: rgb(186, 192, 192);
   color: black;
+}
+.justdoit {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: underline;
+  font-style: italic;
+  font-size: 100px;
+  margin-top: 100px;
+  color: rgb(224, 224, 187);
+}
+.btn-secondary {
+  font-family: "Courier New", Courier, monospace;
+}
+.select-css {
+  font-family: "Courier New", Courier, monospace;
+}
+.select:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 800px) {
+  .listData {
+    display: block;
+    width: 70%;
+  }
+  .list {
+    display: block;
+    margin: 20px 0px;
+    max-width: 80%;
+    width: 100%;
+  }
+}
+.show {
+  font-family: "Courier New", Courier, monospace;
 }

@@ -7,17 +7,17 @@ router.get("/", function (req, res) {
       res.json({ data });
     })
     .catch(function (err) {
-      res.json({ mess: "that bai", err });
+      res.json({ err });
     });
 });
 router.post("/", function (req, res) {
   TodoModel.create({
     name: req.query.name,
-    deadline: new Date(req.query.deadline),
+    deadline: new Date(req.query.deadline).toString(),
     status: req.query.status,
   })
     .then(function (data) {
-      res.son({ mess: " Thành công" });
+      res.json({ mess: " Thành công" });
     })
     .catch(function (err) {
       res.json({ mess: "Thất bại" });
@@ -34,11 +34,12 @@ router.delete("/:id", function (req, res) {
     });
 });
 router.put("/:id", function (req, res) {
+  console.log();
   TodoModel.updateOne(
     { _id: req.params.id },
     {
       name: req.body.newname,
-      deadline: new Date(req.body.newdeadline),
+      deadline: new Date(req.body.newdeadline).toString(),
       status: req.body.newstatus,
     }
   )
